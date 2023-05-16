@@ -4,6 +4,7 @@
 ## ```flutter doctor``` 環境注意事項
 
 ### android studio 安裝完成 並且 安裝cmdline-tool(詳情見android studio 官網)
+將 cmdline-tool 手動加入latest資料夾中
 
 ###  ```輸入flutter doctor --android-licenses``` 並告訴 flutter 接受所有flutter 的協議
 
@@ -12,15 +13,31 @@
 配置:
 如同android studio 需要將hyper-v 開啟以及 vm-acceration 等環境配置完成。必須先將hyper-v 開啟
 # hyper-v 開啟方式
-https://learn.microsoft.com/zh-tw/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+cmd 打開 輸入 ``` systeminfo```
+
+最底下的四個變量都得是true
+
+如果 firm aware 韌體的地方 不是true
+
+代表 firm aware 必須開啟 虛擬化
+
+進入bios (若已開啟則略過)
+# bios config(若已開啟則略過)
 
 以系統管理員身分開啟 PowerShell 主控台。
 
-執行以下命令：
+## 如果你是AMD 顯卡使用者
+### 網路上大部分的資料都不會有相關的bios 配置
+
+### 請至第一個bios 配置(左邊數來) 找尋 SVM 開啟
+
+
+### 以下假設 systeminfo 四個變量皆為true
+執行以下命令(``以下假設 systeminfo 四個變量皆為true``)：
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
-透過 介面:
+或者透過 介面:
 
 以滑鼠右鍵按一下 Windows 鍵，然後選取 \[應用程式與功能\]。
 
@@ -30,30 +47,18 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 選取 [Hyper-V]，然後按一下 [確定]。
 
-# bios Configuration
 
-Restart your computer
+# 確認方式:
+再次打開systeminfo，模擬化已啟用。
+再次確認:
+打開 cpu 效能 查看底下詳細資訊，模擬為true
 
-On the boot up image, quickly press f12 to enter bios 
-(might be a different function key depending on your motherboard)
+# 安裝java(如沒有請安裝)
 
-Go to BIOS configurations (navigation is done with arrow keys enter key to go into or select, and esc to go back)
-Go to the M.T.I. tab (should be the default tab)
+# 最後開啟android studio 進行模擬
 
-Go into "Advanced Frequency Settings"
+# flutter 模擬:
+ctrl+shift+p flutter select device
 
-Scroll to "SVM Mode"
-
-You can also look for anything that says virtualization or VT-x if you dont see SVM
-Click, enter
-Highlight "enable" 
-
-and click enter
-Click ESC to go back
-
-Scroll to the right to get to the save tab
-Highlight "Save and quit"
-Click enter
-
-Your computer will restart. Try to reinstall the SDK Tool, "Android Emulator Hypervisor Driver for AMD Processor (installer) through android studio
+加入新的android裝置
 
