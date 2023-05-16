@@ -30,3 +30,30 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 選取 [Hyper-V]，然後按一下 [確定]。
 
+# bios Configuration
+
+Restart your computer
+
+On the boot up image, quickly press f12 to enter bios 
+(might be a different function key depending on your motherboard)
+
+Go to BIOS configurations (navigation is done with arrow keys enter key to go into or select, and esc to go back)
+Go to the M.T.I. tab (should be the default tab)
+
+Go into "Advanced Frequency Settings"
+
+Scroll to "SVM Mode"
+
+You can also look for anything that says virtualization or VT-x if you dont see SVM
+Click, enter
+Highlight "enable" 
+
+and click enter
+Click ESC to go back
+
+Scroll to the right to get to the save tab
+Highlight "Save and quit"
+Click enter
+
+Your computer will restart. Try to reinstall the SDK Tool, "Android Emulator Hypervisor Driver for AMD Processor (installer) through android studio
+
