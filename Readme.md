@@ -12,3 +12,21 @@
 配置:
 如同android studio 需要將hyper-v 開啟以及 vm-acceration 等環境配置完成。必須先將hyper-v 開啟
 # hyper-v 開啟方式
+https://learn.microsoft.com/zh-tw/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+
+以系統管理員身分開啟 PowerShell 主控台。
+
+執行以下命令：
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
+透過 介面:
+
+以滑鼠右鍵按一下 Windows 鍵，然後選取 \[應用程式與功能\]。
+
+選取相關設定下方右側的 [程式和功能 ]。
+
+選取 [開啟或關閉 Windows 功能]。
+
+選取 [Hyper-V]，然後按一下 [確定]。
+
