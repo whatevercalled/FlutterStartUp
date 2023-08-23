@@ -4,6 +4,8 @@
 ## ```flutter doctor``` 環境注意事項
 
 ### android studio 安裝完成 並且 安裝cmdline-tool(詳情見android studio 官網)
+### 基本上就是從android studio 首頁抓取cmdline-tool 再到sdk mananger 的根目錄放上去就好
+![Alt text](image.png)
 將 cmdline-tool 手動加入latest資料夾中
 
 ###  ```輸入flutter doctor --android-licenses``` 並告訴 flutter 接受所有flutter 的協議
